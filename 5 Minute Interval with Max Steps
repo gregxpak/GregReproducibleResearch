@@ -1,0 +1,20 @@
+ > library(ggplot2)
+> data <- read.csv("activity.csv", header = TRUE, sep = ',', colClasses = c("numeric", "character", "integer"))
+> data$date <- ymd(data$date)
+> steps <- data %>%
++   filter(!is.na(steps)) %>%
++   group_by(date) %>%
++   summarize(steps = sum(steps)) %>%
+
+ interval <- data %>%
++ filter(!is.na(steps)) %>%
++ group_by(interval) %>%
++ summarize(steps = mean(steps))
+> ggplot(interval, aes(x=interval, y=steps)) +
++ geom_line(color = "firebrick")
+
+interval[which.max(interval$steps),]
+# A tibble: 1 x 2
+  interval    steps
+     <int>    <dbl>
+1      835 206.1698
