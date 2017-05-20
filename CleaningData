@@ -1,2 +1,3 @@
+library(lubridate)
 > data <- read.csv("activity.csv", header = TRUE, sep = ',', colClasses = c("numeric", "character", "integer"))
 > data$date <- ymd(data$date)
