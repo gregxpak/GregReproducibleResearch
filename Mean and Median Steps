@@ -9,6 +9,8 @@
 +   filter(!is.na(steps)) %>%
 +   group_by(date) %>%
 +   summarize(steps = sum(steps)) %>%
++   print
+
 > mean_steps <- mean(steps$steps, na.rm = TRUE)
 > median_steps <- median(steps$steps, na.rm = TRUE)
 > mean_steps
