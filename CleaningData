@@ -9,3 +9,4 @@ steps <- data %>%
 +   filter(!is.na(steps)) %>%
 +   group_by(date) %>%
 +   summarize(steps = sum(steps)) %>%
++   print
