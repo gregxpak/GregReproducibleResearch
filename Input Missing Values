@@ -2,7 +2,7 @@
 > opts_chunk$set(echo = TRUE)
 > library(dplyr)
 > library(ggplot2)
-
+> library(lubridate)
 > data<-read.csv("activity.csv", header = TRUE, sep = ',', colClasses = c("numeric", "character","integer"))
 > data$date <- ymd(data$date)
 > steps <- data %>%
